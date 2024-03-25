@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
+import postsList from "./posts.json";
 
-const markdown = "# Hi, *Pluto*!";
+const markdown = postsList[1].content;
 
 function App() {
 	return (
