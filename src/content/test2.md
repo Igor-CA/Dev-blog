@@ -3,7 +3,7 @@ title: Second test
 date: March 25, 2024
 author: Igor Caldeira
 language: pt-br
-tags: [mine, jojo, beastars]
+tags: ["post", "markdown", "react"]
 ---
 
 # Hello

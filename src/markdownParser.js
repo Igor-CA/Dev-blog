@@ -18,7 +18,7 @@ const parseMetadata = ({ lines, MetadataIndexes }) => {
 		metadata.forEach((line) => {
 			const keyValue = line.split(": ");
 			const key = keyValue[0];
-			const value = keyValue[1];
+			const value = keyValue[1].trim();
 			obj[key] = value;
 		});
 		return obj;
@@ -54,6 +54,7 @@ const getPosts = () => {
 					title: metadata.title ? metadata.title : "title not given",
 					date: metadata.date ? metadata.date : "date not given",
 					author: metadata.author ? metadata.author : "author not given",
+					tags: metadata.tags ? JSON.parse(metadata.tags) : "tags not given",
 					language: metadata.language
 						? metadata.language
 						: "language not given",
