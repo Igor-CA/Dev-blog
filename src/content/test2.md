@@ -1,12 +1,14 @@
 ---
-title: Second test
-date: March 25, 2024
+title: Segundo teste
+date: March 24, 2024
 author: Igor Caldeira
 language: pt-br
 tags: ["post", "markdown", "react"]
+description: Meu segundo post
+cover: secondPost.jpg
 ---
 
-# Hello
+# Olá
 
-This is my second post
-Here is also **bold** text and here is also a _Italic one_
+Esse é meu segundo post
+aqui está um texto em **negrito** e aqui está um texto em _italico_

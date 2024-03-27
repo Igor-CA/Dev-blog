@@ -4,6 +4,8 @@ date: March 24, 2024
 author: Igor Caldeira
 language: en
 tags: ["post", "markdown", "react"]
+description: My first post
+cover: firstPost.jpg
 ---
 
 # Hello

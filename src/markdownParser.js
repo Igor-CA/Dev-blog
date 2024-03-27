@@ -54,6 +54,10 @@ const getPosts = () => {
 					title: metadata.title ? metadata.title : "title not given",
 					date: metadata.date ? metadata.date : "date not given",
 					author: metadata.author ? metadata.author : "author not given",
+					cover: metadata.cover ? metadata.cover : "cover not given",
+					description: metadata.description
+						? metadata.description
+						: "description not given",
 					tags: metadata.tags ? JSON.parse(metadata.tags) : "tags not given",
 					language: metadata.language
 						? metadata.language
