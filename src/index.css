@@ -14,10 +14,39 @@
 	background-color: #c4cad2;
 	max-width: 600px;
 	margin: 10px auto;
-	padding: 1em;
-	border-radius: 10px;
+	overflow: hidden;
+	border-radius: 5px;
+	position: relative;
+	display: block;
+	text-decoration: none;
 }
 
+.post-summary__cover{
+	width: 100%;
+}
+.post-summary__content{
+	padding: 1rem;
+}
+.post-summary__tags{
+	position: absolute;
+	color: white;
+	display: flex;
+	list-style: none;
+	top: 0px;
+	right: 0px;
+
+}.post-summary__tags li{
+	background-color: gray;
+	border-radius: 5px;
+	margin: 0.25rem;
+	text-align: center;
+	padding: 3px 10px;
+}.post-summary__tags li:hover{
+	cursor: pointer;
+	transform: scale(1.1);
+	background-color: rgb(194, 194, 194);
+	transition: 250ms;
+}
 .switch {
 	font-size: 17px;
 	position: relative;
