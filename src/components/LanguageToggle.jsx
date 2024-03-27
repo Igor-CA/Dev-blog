@@ -1,25 +1,38 @@
+import { useEffect, useState } from "react";
 import "../index.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function LanguageToggle() {
+	const [currentLanguage, setCurrentLanguage] = useState(
+		window.location.pathname.startsWith("/pt-br") ? "pt-br" : "en"
+	);
 	const navigate = useNavigate();
+	const location = useLocation();
+	useEffect(() => {
+		setCurrentLanguage(
+			window.location.pathname.startsWith("/pt-br") ? "pt-br" : "en"
+		);
+	}, [location]);
+
 	const handleLanguageChange = (e) => {
 		const checked = e.target.checked;
-		const language = checked ? "" : "pt-br";
+		const language = checked ? "en" : "pt-br";
 
 		const currentPath = window.location.pathname;
 
 		// Remove any existing language prefix from the current path
-		if (currentPath.startsWith("/pt-br")) {
+		if (currentLanguage === "pt-br") {
 			const newPath = currentPath.replace("/pt-br", "");
 			navigate(newPath);
 		}
 
 		// Add the new language prefix
-		if (language === "pt-br") {
+		if (currentLanguage === "en") {
 			const newPath = `/pt-br${currentPath}`;
 			navigate(newPath);
 		}
+
+		setCurrentLanguage(language);
 	};
 	return (
 		<div>
@@ -34,9 +47,9 @@ export default function LanguageToggle() {
 					onChange={(e) => {
 						handleLanguageChange(e);
 					}}
-					defaultChecked
+					checked={currentLanguage === "en"}
 				></input>
-				<span class="slider"></span>
+				<span className="slider"></span>
 			</label>
 		</div>
 	);
