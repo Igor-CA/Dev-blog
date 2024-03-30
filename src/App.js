@@ -1,5 +1,4 @@
 import "./index.css";
-import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllPostsPage from "./pages/AllPostsPage";
 import PostPage from "./pages/PostPage";
