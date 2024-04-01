@@ -6,7 +6,7 @@ import MainHeader from "./components/MainHeader";
 
 function App() {
 	return (
-		<div className="bg-slate-50 min-h-svh">
+		<div className="bg-slate-50 min-h-svh text-slate-700">
 			<BrowserRouter>
 				<MainHeader></MainHeader>
 				<Routes>

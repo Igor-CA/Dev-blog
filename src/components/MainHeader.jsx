@@ -16,7 +16,7 @@ export default function MainHeader() {
 	}, [location]);
 
 	return (
-		<header className="w-full bg-slate-50/80 backdrop-blur-md  sticky top-0 z-10">
+		<header className="w-full bg-slate-50/80 backdrop-blur-md  sticky top-0 z-10 shadow-md">
 			<div className="w-full bg-slate-700 h-1.5"></div>
 			<div className="flex justify-around items-center">
 				<Link to={currentLanguage === "pt-br" ? "/pt-br" : "/"} className="font-bold text-xl p-2.5">Blog</Link>
