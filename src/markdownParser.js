@@ -67,7 +67,7 @@ const getPosts = () => {
 				postList.push(post);
 				if (postList.length === files.length) {
 					const sortedPostList = postList.sort((a, b) => {
-						return a.id > b.id ? 1 : -1;
+						return a.id < b.id ? 1 : -1;
 					});
 					let data = JSON.stringify(sortedPostList);
 					fs.writeFileSync("src/posts.json", data);
