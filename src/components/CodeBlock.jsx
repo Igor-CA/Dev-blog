@@ -1,20 +1,22 @@
-import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-const CodeBlock = ({ inline, className, children }) => {
-  if (inline) {
-    // For inline code blocks
-    return <code className={className}>{children}</code>;
-  }
-
-  const language = className ? className.replace('language-', '') : '';
-
-  return (
-    <SyntaxHighlighter style={dracula} language={language} PreTag="div">
-      {String(children).replace(/\n$/, '')}
-    </SyntaxHighlighter>
-  );
+const CodeBlock = ({ node, inline, className, children, ...props }) => {
+	const match = /language-(\w+)/.exec(className || "");
+	if (!inline && match) {
+		const language = match[1];
+		return (
+			<SyntaxHighlighter style={dracula} language={language} PreTag="div">
+				{String(children).replace(/\n$/, "")}
+			</SyntaxHighlighter>
+		);
+	}
+	return (
+		<code className="bg-slate-200 px-1 py-px rounded-sm" {...props}>
+			{children}
+		</code>
+	);
 };
 
 export default CodeBlock;
