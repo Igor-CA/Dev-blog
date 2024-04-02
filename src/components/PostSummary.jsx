@@ -26,7 +26,7 @@ export default function PostSummary({ post }) {
 				</ul>
 			</div>
 			<section className="p-2.5">
-				<h2 className="font-bold text-lg">{title}</h2>
+				<h2 className="font-bold text-lg text-slate-900">{title}</h2>
 				<p className="text-sm">{formatedDate}</p>
 				<p>{description}</p>
 			</section>
