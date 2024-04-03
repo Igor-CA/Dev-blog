@@ -4,6 +4,10 @@ import postsList from "../posts.json";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CodeBlock from "../components/CodeBlock";
+import HeadingWithID from "../components/HeadingWithId";
+import TableOfContent from "../components/TableOfContent";
+
+
 
 export default function PostPage({ language }) {
 	const [post, setPost] = useState();
@@ -52,7 +56,11 @@ export default function PostPage({ language }) {
 					)}
 					<div className="my-2">
 						{tags.map((tag) => {
-							return <span className="mx-2">#{tag} </span>;
+							return (
+								<span className="mx-2" key={tag}>
+									#{tag}{" "}
+								</span>
+							);
 						})}
 					</div>
 					<hr className="border border-slate-700/60 mb-4" />
@@ -63,26 +71,14 @@ export default function PostPage({ language }) {
 							remarkPlugins={[remarkGfm]}
 							components={{
 								code: CodeBlock,
+								h2: (props) => <HeadingWithID level={2} {...props} />,
+								h3: (props) => <HeadingWithID level={3} {...props} />,
 							}}
 						>
 							{content}
 						</Markdown>
 					</article>
-					<aside class="sticky top-16 grid gap-4 self-start lg:w-64  justify-self-end">
-						<section class="hidden gap-4 lg:grid">
-							<h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">
-								Table of Contents
-							</h2>
-							<nav class="grid justify-items-start gap-2 text-sm font-medium">
-								<a
-									class="rounded-md transition-shadow focus-visible:outline-none focus-visible:ring-2 text-slate-900 dark:text-slate-100"
-									href="#exemple1"
-								>
-									Exemple of content
-								</a>
-							</nav>
-						</section>
-					</aside>
+					<TableOfContent></TableOfContent>
 				</section>
 			</div>
 		);
