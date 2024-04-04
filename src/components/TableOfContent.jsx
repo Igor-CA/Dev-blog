@@ -1,7 +1,10 @@
+import useActiveHeader from "../hooks/useActiveHeading";
 import useNestedHeadings from "../hooks/useNestedHeadings";
 
-export default function TableOfContent(){
+export default function TableOfContent() {
 	const headings = useNestedHeadings();
+	const activeId = useActiveHeader();
+
 	const handleClick = (e, id) => {
 		e.preventDefault();
 		document.querySelector(`#${id}`).scrollIntoView({
@@ -11,15 +14,15 @@ export default function TableOfContent(){
 	return (
 		<aside className="sticky top-16 grid gap-4 self-start lg:w-64  justify-self-end">
 			<section className="hidden gap-4 lg:grid">
-				<h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+				<h4 className="text-xl font-bold text-slate-900 dark:text-slate-100">
 					Table of Contents
-				</h2>
-				<nav className="grid justify-items-start gap-2 text-sm font-medium">
+				</h4>
+				<nav className="text-sm font-medium">
 					<ul>
 						{headings.map(({ id, title, children }) => (
-							<li key={id}>
+							<li key={id} className="py-1 pl-4">
 								<a
-									className="rounded-md transition-shadow focus-visible:outline-none focus-visible:ring-2 text-slate-900 dark:text-slate-100"
+									className={getStyle(activeId, id)}
 									href={`#${id}`}
 									onClick={(e) => {
 										handleClick(e, id);
@@ -30,11 +33,10 @@ export default function TableOfContent(){
 								{children.length > 0 && (
 									<ul>
 										{children.map(({ id, title }) => (
-											<li>
+											<li key={id}>
 												<a
-													className="rounded-md transition-shadow focus-visible:outline-none focus-visible:ring-2 text-slate-900 dark:text-slate-100 pl-2.5"
+													className={`${getStyle(activeId, id)} pl-2`}
 													href={`#${id}`}
-													key={id}
 													onClick={(e) => {
 														e.preventDefault();
 														document.querySelector(`#${id}`).scrollIntoView({
@@ -55,4 +57,10 @@ export default function TableOfContent(){
 			</section>
 		</aside>
 	);
+}
+
+const getStyle = (activeId, id) => {
+	const activeStyle = "text-slate-400 hover:text-slate-700";
+	const inactiveStyle = "text-slate-900";
+	return activeId === id ? activeStyle : inactiveStyle;
 };
