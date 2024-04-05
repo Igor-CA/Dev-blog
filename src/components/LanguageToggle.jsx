@@ -34,7 +34,7 @@ export default function LanguageToggle() {
 		setCurrentLanguage(language);
 	};
 	return (
-		<div>
+		<div className="p-2">
 			<label className="relative w-16 h-8 inline-block" htmlFor="language">
 				<input
 					name="language"
