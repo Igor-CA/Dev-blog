@@ -7,12 +7,10 @@ import CodeBlock from "../components/CodeBlock";
 import HeadingWithID from "../components/HeadingWithId";
 import TableOfContent from "../components/TableOfContent";
 
-
-
 export default function PostPage({ language }) {
 	const [post, setPost] = useState();
 	const navigate = useNavigate();
-    const { id } = useParams();
+	const { id } = useParams();
 	useEffect(() => {
 		const sortedPost = postsList.find((post) => {
 			if (post.id !== parseInt(id)) return false;
@@ -39,9 +37,9 @@ export default function PostPage({ language }) {
 					<img
 						src={`http://${window.location.hostname}:3000/assets/${cover}`}
 						alt="cover"
-						className="w-full border border-slate-700 rounded-md mb-5"
+						className="w-full border border-slate-700 dark:border-slate-300 rounded-md mb-5"
 					/>
-					<h1 className="font-extrabold text-slate-900 text-4xl mb-2">
+					<h1 className="font-extrabold text-slate-900 text-4xl mb-2 dark:text-white">
 						{title}
 					</h1>
 					{language === "pt-br" && (
@@ -63,10 +61,10 @@ export default function PostPage({ language }) {
 							);
 						})}
 					</div>
-					<hr className="border border-slate-700/60 mb-4" />
+					<hr className="border border-slate-700/60 dark:border-slate-300/60 mb-4" />
 				</div>
 				<section className="mt-4 lg:grid lg:grid-cols-[auto,1fr] ">
-					<article className="prose prose-slate max-w-4xl w-full break-words lg:max-w-2xl">
+					<article className="prose prose-slate dark:prose-invert max-w-4xl w-full break-words lg:max-w-2xl">
 						<Markdown
 							remarkPlugins={[remarkGfm]}
 							components={{

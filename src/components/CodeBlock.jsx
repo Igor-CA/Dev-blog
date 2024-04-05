@@ -13,7 +13,7 @@ const CodeBlock = ({ node, inline, className, children, ...props }) => {
 		);
 	}
 	return (
-		<code className="bg-slate-200 px-1 py-px rounded-sm" {...props}>
+		<code className="bg-slate-200 px-1 py-px rounded-sm dark:bg-slate-700" {...props}>
 			{children}
 		</code>
 	);

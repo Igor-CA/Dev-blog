@@ -14,7 +14,7 @@ export default function TableOfContent() {
 	return (
 		<aside className="sticky top-16 grid gap-4 self-start lg:w-64  justify-self-end">
 			<section className="hidden gap-4 lg:grid">
-				<h4 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+				<h4 className="text-xl font-bold text-slate-900 dark:text-white">
 					Table of Contents
 				</h4>
 				<nav className="text-sm font-medium">
@@ -60,7 +60,7 @@ export default function TableOfContent() {
 }
 
 const getStyle = (activeId, id) => {
-	const activeStyle = "text-slate-400 hover:text-slate-700";
-	const inactiveStyle = "text-slate-900";
+	const activeStyle = "text-slate-900 dark:text-white";
+	const inactiveStyle = "text-slate-400 hover:text-slate-700 dark:text-slate-500 dark:hover:text-slate-300";
 	return activeId === id ? activeStyle : inactiveStyle;
 };
