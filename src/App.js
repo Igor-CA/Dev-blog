@@ -3,10 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllPostsPage from "./pages/AllPostsPage";
 import PostPage from "./pages/PostPage";
 import MainHeader from "./components/MainHeader";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<div className="bg-slate-50 min-h-svh text-slate-700">
+		<div className="bg-slate-50 min-h-svh text-slate-700 dark:bg-slate-800 dark:text-slate-300">
 			<BrowserRouter>
 				<MainHeader></MainHeader>
 				<Routes>
@@ -25,6 +26,7 @@ function App() {
 					></Route>
 					<Route path="*" element={<p>Página não encontrada</p>}></Route>
 				</Routes>
+				<Footer></Footer>
 			</BrowserRouter>
 		</div>
 	);
