@@ -18,7 +18,6 @@ export default function useActiveHeader() {
 				const headingElement = headingElementsRef.current[key];
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
 			});
-			console.log(visibleHeadings);
 
 			const getIndexFromId = (id) =>
 				headingElements.findIndex((heading) => heading.id === id);
