@@ -13,7 +13,7 @@ export default function useNestedHeadings() {
 const getNestedHeadings = (headingsList) => {
 	let nestedHeadings = [];
 
-	for (let i = 0; i < headingsList.length - 1; i++) {
+	for (let i = 0; i < headingsList.length; i++) {
 		const heading = headingsList[i];
 		if (heading.tagName === "H2") {
 			nestedHeadings.push({
