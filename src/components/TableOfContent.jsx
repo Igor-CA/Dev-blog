@@ -1,7 +1,7 @@
 import useActiveHeader from "../hooks/useActiveHeading";
 import useNestedHeadings from "../hooks/useNestedHeadings";
 
-export default function TableOfContent() {
+export default function TableOfContent({language}) {
 	const headings = useNestedHeadings();
 	const activeId = useActiveHeader();
 
@@ -15,7 +15,7 @@ export default function TableOfContent() {
 		<aside className="sticky top-16 grid gap-4 self-start lg:w-64  justify-self-end">
 			<section className="hidden gap-4 lg:grid">
 				<h4 className="text-xl font-bold text-slate-900 dark:text-white">
-					Table of Contents
+					{language==="en"?"Table of Contents":"Tópicos do post"}
 				</h4>
 				<nav className="text-sm font-medium">
 					<ul>
