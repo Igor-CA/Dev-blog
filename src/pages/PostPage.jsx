@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PostHeader from "../components/PostHeader";
 import PostContent from "../components/PostContent";
+import RecomendedPosts from "../components/RecomendedPosts";
 
 export default function PostPage({ language }) {
 	const [post, setPost] = useState();
@@ -26,6 +27,7 @@ export default function PostPage({ language }) {
 			<div className="px-4 py-2.5 max-w-5xl mx-auto">
 				<PostHeader post={post}></PostHeader>
 				<PostContent post={post}></PostContent>
+				<RecomendedPosts post={post}></RecomendedPosts>
 			</div>
 		);
 	}

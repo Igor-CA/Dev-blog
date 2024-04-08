@@ -1,11 +1,9 @@
-import { Link } from "react-router-dom";
-
 export default function PostSummary({ post }) {
-	const { title, tags, description, cover, date, id } = post;
+	const { title, tags, description, cover, date, id, language} = post;
 	const formatedDate = new Date(date).toLocaleDateString(undefined,{year: 'numeric', month: 'long', day: 'numeric' });
 
 	return (
-		<Link className="inline-block border border-slate-700 dark:border-slate-300 rounded-md overflow-hidden w-full" to={`./post/${id}`}>
+		<a className="inline-block border border-slate-700 dark:border-slate-300 rounded-md overflow-hidden w-full" href={language==="en"?`/post/${id}`:`/pt-br/post/${id}`}>
 			<div className="relative">
 				<img
 					src={`http://${window.location.hostname}:3000/assets/${cover}`}
@@ -30,6 +28,6 @@ export default function PostSummary({ post }) {
 				<p className="text-sm">{formatedDate}</p>
 				<p>{description}</p>
 			</section>
-		</Link>
+		</a>
 	);
 }
