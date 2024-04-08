@@ -8,7 +8,7 @@ export default function PostContent({post}) {
     const { content } = post;
 	return (
 		<section className="mt-4 lg:grid lg:grid-cols-[auto,1fr] ">
-			<article className="prose prose-slate dark:prose-invert max-w-4xl w-full break-words lg:max-w-2xl">
+			<article id="article" className="prose prose-slate dark:prose-invert max-w-4xl w-full break-words lg:max-w-2xl">
 				<Markdown
 					remarkPlugins={[remarkGfm]}
 					components={{

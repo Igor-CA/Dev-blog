@@ -4,7 +4,10 @@ export default function HeadingWithID({ level, children, ...props }) {
 	const headingLevel = `h${level}`;
 	let id;
 	try {
-		id = children.toLowerCase().replaceAll(" ", "-");
+		id = children
+			.toLowerCase()
+			.replaceAll(" ", "-")
+			.replaceAll(/[?:()/–\s]+/g, "");
 	} catch {
 		id = children.props.children.toLowerCase().replaceAll(" ", "-");
 	}
