@@ -16,7 +16,7 @@ export default function PostPage({ language }) {
 			return true;
 		});
 		if (sortedPost === undefined) {
-			navigate("/404");
+			language === "en"?navigate("/404"):navigate("/pt-br/404");
 			return;
 		}
 		setPost(sortedPost);

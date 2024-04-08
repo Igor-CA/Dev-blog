@@ -4,6 +4,7 @@ import AllPostsPage from "./pages/AllPostsPage";
 import PostPage from "./pages/PostPage";
 import MainHeader from "./components/MainHeader";
 import Footer from "./components/Footer";
+import Page404 from "./pages/Page404";
 
 function App() {
 	return (
@@ -24,7 +25,7 @@ function App() {
 						path="/post/:id"
 						element={<PostPage language={"en"} />}
 					></Route>
-					<Route path="*" element={<p>Página não encontrada</p>}></Route>
+					<Route path="*" element={<Page404 language={"en"} />}></Route>
 				</Routes>
 				<Footer></Footer>
 			</BrowserRouter>
