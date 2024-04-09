@@ -16,16 +16,12 @@ export default function PostHeader({ post }) {
 				{title}
 			</h1>
 
-			{language === "en" ? (
-				<p>
-					Written by {author} on {formatedDate}{" "}
-				</p>
-			) : (
-				<p>
-					Escrito por {author} on {formatedDate}{" "}
-				</p>
-			)}
-			
+			<p>
+				{language === "en"
+					? `Written by ${author} on ${formatedDate}`
+					: `Escrito por ${author} on ${formatedDate}`}
+			</p>
+
 			<div className="my-2">
 				{tags.map((tag) => {
 					return (
