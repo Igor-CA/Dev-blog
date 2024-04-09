@@ -4,23 +4,25 @@ import { useEffect, useState } from "react";
 import PostHeader from "../components/PostHeader";
 import PostContent from "../components/PostContent";
 import RecomendedPosts from "../components/RecomendedPosts";
+import useLanguage from "../hooks/useLanguage";
 
-export default function PostPage({ language }) {
+export default function PostPage() {
+	const {currentLanguage} = useLanguage()
 	const [post, setPost] = useState();
 	const navigate = useNavigate();
 	const { id } = useParams();
 	useEffect(() => {
 		const sortedPost = postsList.find((post) => {
 			if (post.id !== parseInt(id)) return false;
-			if (post.language !== language) return false;
+			if (post.language !== currentLanguage) return false;
 			return true;
 		});
 		if (sortedPost === undefined) {
-			language === "en"?navigate("/404"):navigate("/pt-br/404");
+			currentLanguage === "en"?navigate("/404"):navigate("/pt-br/404");
 			return;
 		}
 		setPost(sortedPost);
-	}, [language]);
+	}, [currentLanguage]);
 
 	if (post) {
 		return (

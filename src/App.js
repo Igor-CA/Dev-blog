@@ -12,20 +12,11 @@ function App() {
 			<BrowserRouter>
 				<MainHeader></MainHeader>
 				<Routes>
-					<Route
-						path="/pt-br"
-						element={<AllPostsPage language={"pt-br"} />}
-					></Route>
-					<Route path="/" element={<AllPostsPage language={"en"} />}></Route>
-					<Route
-						path="/pt-br/post/:id"
-						element={<PostPage language={"pt-br"} />}
-					></Route>
-					<Route
-						path="/post/:id"
-						element={<PostPage language={"en"} />}
-					></Route>
-					<Route path="*" element={<Page404 language={"en"} />}></Route>
+					<Route path="/" element={<AllPostsPage />}></Route>
+					<Route path="/post/:id" element={<PostPage />}></Route>
+					<Route path="/pt-br" element={<AllPostsPage />}></Route>
+					<Route path="/pt-br/post/:id" element={<PostPage />}></Route>
+					<Route path="*" element={<Page404 />}></Route>
 				</Routes>
 				<Footer></Footer>
 			</BrowserRouter>

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LanguageToggle from "./LanguageToggle";
 import { LuMoonStar, LuSunDim } from "react-icons/lu";
+import useLanguage from "../hooks/useLanguage";
 
 export default function MainHeader() {
-	const [currentLanguage, setCurrentLanguage] = useState(
-		window.location.pathname.startsWith("/pt-br") ? "pt-br" : "en"
-	);
+	const {currentLanguage} = useLanguage()
 	const [theme, setTheme] = useState(
 		localStorage.theme ? localStorage.theme : "light"
 	);
@@ -20,12 +19,6 @@ export default function MainHeader() {
 		}
 	}, [theme]);
 
-	const location = useLocation();
-	useEffect(() => {
-		setCurrentLanguage(
-			window.location.pathname.startsWith("/pt-br") ? "pt-br" : "en"
-		);
-	}, [location]);
 
 	const toggleTheme = () => {
 		if (theme === "light") {

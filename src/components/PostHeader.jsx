@@ -15,16 +15,17 @@ export default function PostHeader({ post }) {
 			<h1 className="font-extrabold text-slate-900 text-4xl mb-2 dark:text-white">
 				{title}
 			</h1>
-			{language === "pt-br" && (
+
+			{language === "en" ? (
+				<p>
+					Written by {author} on {formatedDate}{" "}
+				</p>
+			) : (
 				<p>
 					Escrito por {author} on {formatedDate}{" "}
 				</p>
 			)}
-			{language === "en" && (
-				<p>
-					Written by {author} on {formatedDate}{" "}
-				</p>
-			)}
+			
 			<div className="my-2">
 				{tags.map((tag) => {
 					return (

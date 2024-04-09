@@ -20,7 +20,7 @@ export default function PostContent({post}) {
 					{content}
 				</Markdown>
 			</article>
-			<TableOfContent language={post.language}></TableOfContent>
+			<TableOfContent></TableOfContent>
 		</section>
 	);
 }

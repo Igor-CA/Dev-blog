@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import useLanguage from "../hooks/useLanguage";
 
 export default function Page404() {
-	const [currentLanguage, setCurrentLanguage] = useState(
-		window.location.pathname.startsWith("/pt-br") ? "pt-br" : "en"
-	);
-	const location = useLocation();
-	useEffect(() => {
-		setCurrentLanguage(
-			window.location.pathname.startsWith("/pt-br") ? "pt-br" : "en"
-		);
-	}, [location]);
+	const {currentLanguage} = useLanguage()
+
 	return (
 		<div className="p-5 text-slate-400  dark:text-slate-500 text-center text-5xl font-extrabold min-h-svh flex flex-col justify-center">
 			<span>404</span>

@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import useLanguage from "../hooks/useLanguage";
 
 export default function LanguageToggle() {
-	const [currentLanguage, setCurrentLanguage] = useState(
-		window.location.pathname.startsWith("/pt-br") ? "pt-br" : "en"
-	);
+	const { currentLanguage, setCurrentLanguage } = useLanguage();
 	const navigate = useNavigate();
-	const location = useLocation();
-	useEffect(() => {
-		setCurrentLanguage(
-			window.location.pathname.startsWith("/pt-br") ? "pt-br" : "en"
-		);
-	}, [location]);
 
 	const handleLanguageChange = (e) => {
 		const checked = e.target.checked;
