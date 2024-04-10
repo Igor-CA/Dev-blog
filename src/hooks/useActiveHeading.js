@@ -1,10 +1,10 @@
 const { useEffect, useState, useRef } = require("react");
 
-export default function useActiveHeader() {
+export default function useActiveHeader(post) {
 	const [activeId, setActiveId] = useState();
 	const headingElementsRef = useRef({});
 	useEffect(() => {
-		const headingElements = Array.from(document.querySelectorAll("h2, h3"));
+		const headingElements = Array.from(document.querySelectorAll("#article h2, h3"));
 		//Function called when a element observed by the observer is in view
 		const callback = (headings) => {
 			//Headings is a list of all elements currently being observed
@@ -38,6 +38,6 @@ export default function useActiveHeader() {
 		headingElements.forEach((element) => observer.observe(element));
 
 		return () => observer.disconnect();
-	}, [setActiveId]);
+	}, [post]);
 	return activeId;
 }

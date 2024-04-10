@@ -5,7 +5,7 @@ import useNestedHeadings from "../hooks/useNestedHeadings";
 export default function TableOfContent({post}) {
 	const { currentLanguage } = useLanguage();
 	const headings = useNestedHeadings(post);
-	const activeId = useActiveHeader();
+	const activeId = useActiveHeader(post);
 
 	const handleClick = (e, id) => {
 		e.preventDefault();
