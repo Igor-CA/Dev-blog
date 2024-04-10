@@ -3,6 +3,7 @@ import remarkGfm from "remark-gfm";
 import CodeBlock from "../components/CodeBlock";
 import HeadingWithID from "../components/HeadingWithId";
 import TableOfContent from "./TableOfContent";
+import { useRef } from "react";
 
 export default function PostContent({post}) {
     const { content } = post;
@@ -20,7 +21,7 @@ export default function PostContent({post}) {
 					{content}
 				</Markdown>
 			</article>
-			<TableOfContent></TableOfContent>
+			<TableOfContent post={post}></TableOfContent>
 		</section>
 	);
 }

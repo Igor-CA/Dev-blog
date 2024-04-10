@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
-export default function useNestedHeadings() {
+export default function useNestedHeadings(post) {
 	const [nestedHeadings, setNestedHeadings] = useState([]);
 	useEffect(() => {
 		const headingElements = Array.from(document.querySelectorAll("#article h2, h3"));
 		const nestedHeadings = getNestedHeadings(headingElements);
 		setNestedHeadings(nestedHeadings);
-	}, []);
+		console.log("headings")
+	}, [post]);
 	return nestedHeadings;
 }
 
