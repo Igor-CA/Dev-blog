@@ -40,10 +40,7 @@ export default function TableOfContent() {
 													className={`${getStyle(activeId, id)} pl-2`}
 													href={`#${id}`}
 													onClick={(e) => {
-														e.preventDefault();
-														document.querySelector(`#${id}`).scrollIntoView({
-															behavior: "smooth",
-														});
+														handleClick(e, id);
 													}}
 												>
 													{title}
@@ -63,6 +60,7 @@ export default function TableOfContent() {
 
 const getStyle = (activeId, id) => {
 	const activeStyle = "text-slate-900 dark:text-white";
-	const inactiveStyle = "text-slate-400 hover:text-slate-700 dark:text-slate-500 dark:hover:text-slate-300";
+	const inactiveStyle =
+		"text-slate-400 hover:text-slate-700 dark:text-slate-500 dark:hover:text-slate-300";
 	return activeId === id ? activeStyle : inactiveStyle;
 };
