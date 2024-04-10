@@ -23,7 +23,7 @@ export default function RecomendedPosts({ post }) {
 			</h2>
 			<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 				{recomendedPosts.map((recomendation) => {
-					return <PostSummary post={recomendation}></PostSummary>;
+					return <PostSummary post={recomendation} key={recomendation.id}></PostSummary>;
 				})}
 			</div>
 		</div>
