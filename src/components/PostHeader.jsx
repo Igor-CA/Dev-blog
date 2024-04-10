@@ -8,7 +8,7 @@ export default function PostHeader({ post }) {
 	return (
 		<div className="mx-auto">
 			<img
-				src={`http://${window.location.hostname}:3000/assets/${cover}`}
+				src={`http://${window.location.hostname}/assets/${cover}`}
 				alt="cover"
 				className="w-full border border-slate-700 dark:border-slate-300 rounded-md mb-5"
 			/>

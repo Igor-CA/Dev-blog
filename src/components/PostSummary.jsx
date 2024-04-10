@@ -3,10 +3,10 @@ export default function PostSummary({ post }) {
 	const formatedDate = new Date(date).toLocaleDateString(undefined,{year: 'numeric', month: 'long', day: 'numeric' });
 
 	return (
-		<a className="inline-block border border-slate-700 dark:border-slate-300 rounded-md overflow-hidden w-full" href={language==="en"?`/post/${id}`:`/pt-br/post/${id}`}>
+		<a className="inline-block border border-slate-700 dark:border-slate-300 rounded-md overflow-hidden w-full" href={language==="en"?`#/post/${id}`:`#/pt-br/post/${id}`}>
 			<div className="relative">
 				<img
-					src={`http://${window.location.hostname}:3000/assets/${cover}`}
+					src={`http://${window.location.hostname}/assets/${cover}`}
 					alt="cover"
 					className="w-full border border-slate-700 dark:border-slate-300"
 				/>

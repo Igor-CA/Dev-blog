@@ -9,7 +9,7 @@ export default function LanguageToggle() {
 		const checked = e.target.checked;
 		const language = checked ? "en" : "pt-br";
 
-		const currentPath = window.location.pathname;
+		const currentPath = window.location.hash.replace("#","");
 
 		// Remove any existing language prefix from the current path
 		if (currentLanguage === "pt-br") {
