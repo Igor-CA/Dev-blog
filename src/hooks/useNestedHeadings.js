@@ -6,7 +6,6 @@ export default function useNestedHeadings(post) {
 		const headingElements = Array.from(document.querySelectorAll("#article h2, h3"));
 		const nestedHeadings = getNestedHeadings(headingElements);
 		setNestedHeadings(nestedHeadings);
-		console.log("headings")
 	}, [post]);
 	return nestedHeadings;
 }
