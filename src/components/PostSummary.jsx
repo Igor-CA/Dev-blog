@@ -15,7 +15,7 @@ export default function PostSummary({ post }) {
 						return (
 							<li
 								key={i}
-								className="bg-slate-700 p-2.5 rounded-md my-2.5 text-slate-50 border border-slate-50"
+								className="bg-slate-700 px-2.5 py-1 rounded-md my-2.5 text-slate-50 border border-slate-50"
 							>
 								{tag}
 							</li>
